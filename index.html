@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>portfolio</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <div class="nav">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#proj">Projects</a>
+        <a href="#journe">Experiences</a>
+      </div>
+    </header>
+    <section class="hero" id="home">
+      <video autoplay loop muted class="vid">
+        <source src="landing_bg.mp4" type="video/mp4" />
+      </video>
+      <div class="hero_content">
+        <div class="card_cont">
+          <div class="card">
+            <div class="front">
+              <h2>Hi, I'm <span>KARTHIK P</span></h2>
+            </div>
+            <div class="back">
+              <div class="backcard">
+                <h1>
+                  Hi, I'm
+                  <span style="background-color: transparent">KARTHIK P</span>
+                </h1>
+              </div>
+            </div>
+          </div>
+        </div>
+        <p>A JAVA FSD</p>
+        <a href="2007.pdf" target="_blank">
+          <button class="btn">RESUME</button>
+        </a>
+      </div>
+    </section>
+    <section class="about" id="about">
+      <div class="main">
+        <table>
+          <tr>
+            <td rowspan="4"><img src="pic.jpg" alt="my_pic" class="pic" /></td>
+            <td>
+              <h1 class="bio">
+                I’m <span style="color: chartreuse">KARTHIK P</span>, a
+                Developer <br />building creative and scalable web applications.
+              </h1>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <p class="data">
+                I recently graduated  my B.E in Information Science Engineering
+                at Don Bosco Institute Of technology. <br />
+                I specialize in both frontend and backend development,
+                transforming ideas into functional digital experiences using
+                modern technologies.
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <p class="data" class="b_data">
+                I’m passionate about
+                <span style="color: chartreuse"
+                  >JavaScript, React, Node.js, SQL</span
+                >
+                and bringing smooth, responsive UIs to life <br />with
+                animations and performance in mind. Outside of code, <br />I
+                love exploring photography, tech, and new ideas.
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td class="social-icons-cell">
+              <div class="social-icons-cont">
+                <a href="#"
+                  ><img
+                    width="50px"
+                    height="50"
+                    src="icons8-instagram-50 (1).png"
+                    alt="instagram-new--v1"
+                    class="icoin"
+                /></a>
+                <a href="#"
+                  ><img
+                    width="50"
+                    height="50"
+                    src="icons8-git-30.png"
+                    alt="github"
+                    class="icogi"
+                /></a>
+                <a href="#"
+                  ><img
+                    width="50"
+                    height="50"
+                    src="icons8-linkedin-50.png"
+                    alt="linkedin"
+                    class="icoli"
+                /></a>
+              </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </section>
+    <section class="proj" id="proj">
+      <div class="projects">
+        <h2 class="proj_title">Projects Developed</h2>
+        <div class="proj_card">
+          <a href="">
+            <div class="proj_bg">
+              <img src="saas.jpg" alt="saas_img" srcset="" class="libr" />
+              <h1 class="proj_tit">AI SAAS Apllication</h1>
+              <p class="proj_ai">
+                Developed an AI companion, which consist of features such as AI
+                Image generation, AI Audio generation. Using OpenAI API's.
+                Technologies -NEXT JS, Firebase, OpenAI APi
+              </p>
+            </div>
+          </a>
+          <a href="">
+            <div class="proj_bg">
+              <img src="lib.png" alt="library image" srcset="" class="libr" />
+              <h1>Library Management System</h1>
+              <p class="proj_p">
+                Developed an web application which consisted of both admin ,
+                students Interface for college Library.Technologies -MYSQL,
+                XAMP, PHP
+              </p>
+            </div>
+          </a>
+          <a href="">
+            <div class="proj_bg">
+              <img src="sign.png" alt="predic" srcset="" class="libr" />
+              <h1>Sign language interpretation System</h1>
+              <p class="proj_p">
+                Designed an robust hand sign prediction system , which is
+                capable of detecting hand sign in realtime . Technologies Open
+                CV, Keras,Numpy,Lable maping.
+              </p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+    <section class="journey" id="journe">
+      <h2 class="journey-title">My Journey</h2>
+      <div class="timeline">
+        <div class="timeline-box">
+          <h3>2021-22</h3>
+          <p>
+            Started Engineering Journey at Don Bosco Institute of Technology
+          </p>
+        </div>
+        <div class="timeline-box">
+          <h3>2022-23</h3>
+          <p>
+            Attended a full stack internship at Scontinent Technologies and
+            developed a social medai dashboard
+          </p>
+        </div>
+        <div class="timeline-box">
+          <h3>2023-24</h3>
+          <p>Developed a Libary Management System application</p>
+        </div>
+        <div class="timeline-box">
+          <h3>2024-25</h3>
+          <p>
+            Completed a Internship at Sakha global as an JAVA intern and
+            developed a AI SAAS application
+          </p>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

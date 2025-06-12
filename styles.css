@@ -1,0 +1,498 @@
+@import url('https://fonts.cdnfonts.com/css/redensek');
+@import url('https://fonts.cdnfonts.com/css/samson');
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    height: 100%;
+    width: 100%;
+    font-family: 'redensek', sans-serif;
+    overflow-y: auto;
+    scroll-behavior: smooth;
+}
+header{
+    position: absolute;
+    z-index: 10000;
+    padding-top: 2em;
+}
+.nav{
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    margin: 0 28em;
+    background-color: rgba(24, 218, 40, 0.192);
+    box-shadow: 0 4px 30px rgba(30, 236, 11, 0.2);
+    backdrop-filter: blur(1px);
+    border: 1px solid rgba(11, 235, 40, 0.3);
+}
+    /* background-color: transparent; */
+ /* .nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+} */
+.nav a {
+    text-decoration: none;
+    color: #f0f0f0;
+    font-family: 'Samson', sans-serif;
+    font-size: 1em;
+    padding: 10px 20px;
+    /* margin: 0 15px; */
+    transition: color 0.3s ease, transform 0.3s ease;
+    position: relative;
+}
+.nav a:hover {
+    color: #22f82a;
+    text-decoration: underline;
+    transform: scale(1.2);
+    text-shadow: 0 4px 30px rgb(241, 247, 241),0 4px 30px rgb(241, 234, 234);
+}
+
+.nav a:hover::after {
+    width: 100%;
+}
+
+.nav a.active {
+    color: #22f82a;
+    font-weight: bold;
+}
+.hero{
+     height: 100vh;
+    width: 100vw;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Samson', sans-serif;
+}
+.vid{
+    position: absolute;
+    object-fit: cover;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.hero_content{
+    color: antiquewhite;
+    text-align: center;
+    z-index: 1;
+    font-size: 60px;
+    line-height: 100px;
+    font-weight: lighter;
+    font-family: 'Samson', sans-serif;
+}
+.card_cont{
+    height: 100px;
+    width: 1200px;
+    perspective: 1200px;
+}
+.card{
+    height: 100%;
+    width: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.6s ease-in-out;
+    cursor: pointer;
+    border-radius: 15px;
+}
+.front,.back{
+   position: absolute; 
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  display: flex;
+  overflow: hidden;
+  justify-content: center;
+  align-items: center;
+}
+.back{
+    transform: rotateY(180deg);
+    text-align: left;
+}
+.card:hover {
+    transform: rotateY(180deg);
+}
+.backcard{
+    /* transform: rotateY(180deg); */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 7px;
+    border-radius: 15px;
+    color: black;
+    background: linear-gradient(86deg,rgba(214, 214, 69, 1) 9%, rgba(15, 217, 15, 1) 49%, rgba(28, 204, 217, 1) 92%); 
+    animation: flowborder 3s linear infinite;
+    background-size: 300% 300%;
+}
+@keyframes flowborder {
+    0%{
+        background-position: 0% 50%;
+    }
+    100%{
+        background-position: 100% 50%;
+    }
+}
+.hero_content span{
+    font-family: 'Samson', sans-serif;
+    font-size: 120px;
+    background-color: rgb(43, 247, 53,0.4);
+    /* font-style: italic; */
+}
+.hero_content button {
+    background-color: #22f82a; 
+    color: rgb(5, 5, 5);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 30px;
+    width: 15%;
+    transition: transform background-color 0.9s ease;
+    box-shadow: 0 0 20px rgb(117, 247, 117),0 0 20px rgb(117, 247, 117);
+    font-family: 'Samson', sans-serif;
+}
+.btn:hover{
+    transform: scale(1.15);
+    box-shadow: 0 0 50px rgb(117, 247, 117),0 0 50px rgb(117, 247, 117);
+    border-radius: 10px;
+}
+.about{
+    
+    padding-top: 70px;
+    background-color: black;
+    /* Default text color for about section */
+    color: white;
+    /* Ensure about section takes at least full viewport height */
+    min-height: 100vh;
+    /* Use flexbox to center main content if needed */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* Ensure space at bottom */
+    padding-bottom: 50px;
+}
+    
+
+.main{
+    position: relative;
+    padding-bottom: 50px;
+    padding-top: 90px;
+    max-width: 1500px;
+    height: 100vh;
+    width: 100vw;
+    background-color: black;
+    margin-left: 15px;
+    padding-right: 15px;
+}
+.pic{
+    height: 400px;
+    width: 400px;
+    border-radius: 30px;
+    padding: 20px;
+    box-shadow: 0 0 10px chartreuse,0 0 10px chartreuse;
+    opacity: 0;
+    transform: translateY(100px);
+    animation: slideInFromBottom 10s ease-out forwards;
+    animation-timeline: view();
+    animation-range: entry 0% cover 50%;
+}
+.bio{
+    text-align: center;
+    justify-content: center;
+    font-size: 46px;
+    padding-top: 10px;
+    padding-bottom: 15px;
+    color: beige;
+    line-height: 1.3em;
+    opacity: 0;
+    transform: translateY(100px);
+    animation: slideInFromBottom 10s ease-out forwards;
+    animation-timeline: view();
+    animation-range: entry 0% cover 50%;
+    
+}
+@keyframes slideInFromBottom {
+    0%{
+        transform: translateY(100%);
+        opacity: 0;
+    }
+    100%{
+        transform: translateY(0);
+        opacity: 1;
+    }
+    
+}
+.data{
+    text-align: center;
+    justify-content: center;
+    font-size: 30px;
+    color: beige;
+    margin-top: -20px;
+    padding-right: 15px;
+    line-height: 1.4em;
+    opacity: 0;
+    transform: translateY(100px);
+    animation: slideInFromBottom 10s ease-out forwards;
+    animation-timeline: view();
+    animation-range: entry 0% cover 50%;
+   
+}
+.icons{
+     /* margin-top: -120px;  */
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     z-index: 1;
+}
+/* .icons{
+    display: flex;
+    flex-direction: ;
+
+} */
+.icoin{
+    position: relative;
+    margin-left: 300px;
+    display: inline;
+}
+.icoli{
+    display: inline;
+    margin-right: 400px;
+}
+.icogi{
+    margin-right: 10px;
+    height: 50px;
+    width: 50px;
+}
+.social-icons-cell {
+    margin-top: 10px; 
+}
+.social-icons-cont {
+    display: flex; /* Make this a flex container */
+    justify-content: center; /* Horizontally center the icons */
+    align-items: center; /* Vertically center the icons */
+    gap: 20px; /* Space between icons */
+    margin-top: 10px; /* Add some margin from the paragraph above */
+    margin-bottom: 20px; /* Add some margin below if needed */
+    opacity: 0;
+    transform: translateY(100px);
+    animation: slideInFromBottom 10s ease-out forwards;
+    animation-timeline: view();
+    animation-range: entry 0% cover 50%;
+}
+.icoin:hover, .icogi:hover, .icoli:hover {
+    transform: scale(1.2); /* Slightly enlarge on hover */
+    box-shadow: 0 0 10px chartreuse; /* Add a subtle glow */
+    border-radius: 80%; /* Make glow round if icons are round */
+}
+.proj{
+    background-color: black;
+    /* Default text color for about section */
+    color: white;
+    /* Ensure about section takes at least full viewport height */
+    min-height: 100vh;
+    min-width: 100vw;
+    /* Use flexbox to center main content if needed */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* Ensure space at bottom */
+}
+.proj_card{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.proj_card a{
+    margin: 0em 2em;
+    font-size: 1rem;
+    height: 25em;
+    text-decoration: none; 
+    color: inherit; 
+    
+}
+.proj_card a:hover{
+    transition: transform 0.6s ease;
+    transform: scale(1.05); 
+    box-shadow: 0 0 10px chartreuse; 
+    border-radius: 15px; 
+}
+.projects h1{
+    font-size: 2rem;
+    color: white;
+    text-align: center;
+}
+.projects{
+    z-index: 1;
+    opacity: 0;
+    transform: translateY(100px);
+    animation: slideInFromBottom 10s ease-out forwards;
+    animation-timeline: view();
+    animation-range: entry 0% cover 50%;
+}
+.proj_title{
+    font-size: 5rem;
+    color: white;
+    text-align: center;
+    padding-bottom: 0.5em;
+    z-index: 1;
+    text-shadow: 0em -0.4em 0.1em #22f82a,0em 0.4em 0.1em #22f82a;
+}
+.proj_title:hover{
+    z-index: -3;
+    color: #22f82a;
+    text-shadow: 0em 0em 0.4em #22f82a,0em 0em 0.4em #22f82a;
+}
+.proj_tit{
+    padding-top: 1em;
+}
+.libr{
+    height: 30dvh;
+    width:100%;
+    object-fit: cover;
+    border-radius: 20px 20px 0 0;
+}
+.proj_p{
+    height: 25dvh;
+    width: 100%;
+    font-size: 1.5rem;
+    overflow-y: auto;
+    text-decoration: none;
+}
+.proj_ai{
+    margin-top: 0.8em;
+    height: 22.5dvh;
+    width: 100%;
+    font-size: 1.5rem;
+    overflow-y: auto;
+    text-decoration: none;
+}
+.proj_bg{
+    background-color: #22f82a;
+    border-radius: 20px;
+}
+/* --- JOURNEY SECTION --- */
+.journey {
+    background-color: black;
+    color: white;
+    padding: 80px 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.journey-title {
+    font-size: 4.5em;
+    margin-bottom: 60px;
+    color: #f3f5f3;
+    text-align: center;
+    opacity: 0;
+    text-shadow: 0em -0.4em 0.1em #22f82a,0em 0.4em 0.1em #22f82a;
+    transform: translateY(50px);
+    animation: slideInFromBottom 1s ease-out forwards;
+    animation-timeline: view();
+    animation-range: entry 0% cover 30%;
+}
+
+.timeline {
+    display: flex;
+    flex-wrap: wrap; /* Allow boxes to wrap */
+    justify-content: center; /* Center items */
+    align-items: flex-start;
+    width: 90%;
+    max-width: 1200px;
+    position: relative;
+    padding-top: 30px; /* Space from the top of the .timeline container to the line */
+    padding-bottom: 50px;
+    padding-left: 20px; /* Added for responsive line appearance */
+    padding-right: 20px; /* Added for responsive line appearance */
+}
+
+/* Horizontal Line - CRITICAL CHECK */
+.timeline::before {
+    content: ''; /* Ensure content is defined */
+    position: absolute;
+    top: 25px; /* Adjust this value. It should be (padding-top of .timeline) - (half of line height). If padding-top is 30px and line height is 4px, then 30 - 2 = 28px. Let's start with a value that puts it slightly below the top padding. */
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background-color: #22f82a;
+    z-index: 0;
+}
+
+.timeline-box {
+    padding-top: 40px; /* Keep space inside the box for content */
+    flex: 1;
+    min-width: 200px;
+    max-width: 250px;
+    padding: 25px;
+    background-color: #1a1a1a;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    margin: 0 15px 50px 15px; /* Added bottom margin for wrapping */
+    opacity: 0;
+    transform: translateY(100px);
+    transition: transform 0.5s ease-out, opacity 0.5s ease-out;
+    animation: slideInFromBottom 1s ease-out forwards;
+    animation-timeline: view();
+}
+
+/* Timeline dots on the horizontal line - CRITICAL CHECK */
+.timeline-box::after {
+    content: ''; /* Ensure content is defined */
+    position: absolute;
+    top: -8px; /* This positions the dot relative to the timeline-box's top edge. This should align with the line. */
+    left: 50%;
+    width: 15px;
+    height: 15px;
+    background-color: #22f82a;
+    border-radius: 50%;
+    transform: translateX(-50%);
+    border: 3px solid black;
+    z-index: 2;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.timeline-box h3 {
+    font-size: 2.2em;
+    color: #22f82a;
+    margin-bottom: 10px;
+    text-shadow: 0 0 10px #22f82a;
+}
+
+.timeline-box p {
+    font-size: 1.5em;
+    line-height: 1.5;
+    color: #ccc;
+}
+
+.timeline-box:hover {
+    transform: translateY(-20px) scale(1.03);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.6), 0 0 15px #22f82a;
+    background-color: #2a2a2a;
+    transition: transform 0.5s ease-in-out, box-shadow 0.5s ease-in-out, background-color 0.5s ease-in-out;
+}
+
+.timeline-box:hover::after {
+    background-color: white;
+    border-color: #22f82a;
+}
+
+/* Scroll-Triggered Animation for each timeline box */
+.timeline-box:nth-child(1) { animation-range: entry 0% cover 25%; }
+.timeline-box:nth-child(2) { animation-delay: 0.8s; animation-range: entry 0% cover 25%; }
+.timeline-box:nth-child(3) { animation-delay: 1.2s; animation-range: entry 0% cover 25%; }
+.timeline-box:nth-child(4) { animation-delay: 1.6s; animation-range: entry 0% cover 25%; }
+
